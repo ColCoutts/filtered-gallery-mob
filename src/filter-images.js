@@ -6,7 +6,4 @@ export default function filteredImage(images, filter) {
         return filterKeyword && filterHorns;
     });
     return filteredImages;
-
-    //return objects in an array
-
 }
