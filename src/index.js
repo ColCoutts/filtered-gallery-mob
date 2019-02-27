@@ -7,7 +7,6 @@ const formNode = document.getElementById('filter-list');
 
 loadImages(images);
 
-
 formNode.addEventListener('submit', function(event){
     event.preventDefault();
     
@@ -25,16 +24,18 @@ formNode.addEventListener('submit', function(event){
     const imageChildren = imageListNode.children;
     console.log(imageChildren);
 
-    // while(imageChildren.length > 0) {
-    //     imageListNode.removeChild;
-    // }
     console.log(imageListNode);
+
+    while(imageChildren.length > 0) {
+        imageListNode.lastChild.remove(imageChildren);
+    }
     
     filteredResult.forEach(function(filteredResult) {
         const dom = buildGallery(filteredResult);
         imageListNode.appendChild(dom);
     });
-});
+    
 
+});
 
 //dont understand while and the callback aspect of this build
